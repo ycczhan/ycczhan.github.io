@@ -1,0 +1,134 @@
+.circle {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px;
+  }
+  
+.skill {
+width: 120px;
+height: 120px;
+position: relative;
+}
+  
+.outer {
+width: 100%;
+height: 100%;
+border-radius: 50%;
+background-color: #37371f;
+background-image: conic-gradient(#fff 0% var(--percentage), #37371f var(--percentage)); /* 85% 可調整 */
+display: flex;
+align-items: center;
+justify-content: center;
+box-shadow: 4px 4px 10px rgb(61 61 59);
+}
+  
+.inner {
+width: 85%;
+height: 85%;
+background-color: #37371f;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.label {
+text-align: center;
+color: white;
+font-weight: bold;
+font-size: 14px;
+}
+
+.label span {
+font-size: 12px;
+}
+
+.skill[data-percent="85"] {
+--percentage: 85%;
+}
+.skill[data-percent="60"] {
+--percentage: 60%;
+}
+.skill[data-percent="80"] {
+--percentage: 80%;
+}
+
+@keyframes fillCircle {
+0%   { --percentage: 0%; }
+100% { 
+    /* 最後由 HTML 裡的 data-percent 控制 */
+}
+}
+
+.frame {
+    width: 100%;
+    background-color: #37371f;
+    border-radius: 10px ;
+    box-shadow: 4px 4px 10px rgb(61 61 59); /* 陰影 */
+    padding: 3px;
+    margin-bottom: 5px;
+}
+
+/* 進度條外觀 */
+.line {
+    height: 20px;
+    border-radius: 5px;
+    text-align: right;
+    padding-right: 10px;
+    line-height: 20px;
+    font-weight: bold;
+    color: white;
+    width: 0; /* 初始寬度為 0，用來動畫展開 */
+    animation-duration: 2s;
+    animation-fill-mode: forwards; /* 動畫結束保持狀態 */
+    margin: 0;
+}
+
+/* 個別技能動畫設定 */
+.html .line {
+    background-color: white;
+    color: #37371f;
+    animation-name: bar1;
+}
+.css .line {
+    background-color:white;
+    color: #37371f;
+    animation-name: bar2;
+}
+.python .line {
+    background-color: white;
+    color: #37371f;
+    animation-name: bar3;
+}
+.js .line {
+    background-color: white;
+    color: #37371f;
+    animation-name: bar4;
+}
+
+@keyframes bar1{
+    from{width: 0;} /* 寬度變化 */
+    to{width: 85%;}
+}
+
+@keyframes bar2{
+    from{width: 0;} /* 寬度變化 */
+    to{width: 70%;}
+}
+
+@keyframes bar3{
+    from{width: 0;} /* 寬度變化 */
+    to{width: 40%;}
+}
+
+@keyframes bar4{
+    from{width: 0;} /* 寬度變化 */
+    to{width: 60%;}
+}
+
+li{
+    list-style: none;
+}
+
